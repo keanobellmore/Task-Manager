@@ -67,6 +67,20 @@ func deleteTask() {
     tasks.remove(at: input - 1)
     mainMenu()
     }
+func viewCompletedTask() {
+    print("what completed task would you like to view?")
+    for i in 0...tasks.count - 1 {
+        if tasks[i].taskCompleted == true {
+            print("\(i + 1) \(tasks[i].title)")
+}
+    let input = Int(readLine()!)!
+        print("""
+            \(tasks[input - 1].title)
+            \(tasks[input - 1].details)
+            \(tasks[input - 1].dueDate)
+            """)
+    }
+    mainMenu()}
 func mainMenu() {
     print("""
 ***************************
@@ -76,19 +90,19 @@ func mainMenu() {
 1. Create a task
 2. View tasks
 3. Delete a task
-4. Quit program
+4. View Completed Task
+5. Quit program
 """)
     let input = Int(readLine()!)!
     if input == 1 {
         createTask()
-    }
-    if input == 2 {
+    };if input == 2 {
         viewTask()
-    }
-    if input == 3 {
+    };if input == 3 {
         deleteTask()
-    }
-    if input == 4 {
+    };if input == 4 {
+        viewCompletedTask()
+    };if input == 5 {
         exit(0)
     }
 }
