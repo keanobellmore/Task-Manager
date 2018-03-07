@@ -26,6 +26,9 @@ func createTask() {
     dateFormatter.dateFormat = "MM/dd/yyyy h:mm a"
     let completeDate = calendar.date(byAdding: .day, value: days, to: currentDate)!
     let task0 = task(title: "\(name)", dueDate: completeDate, details: details!, taskCompleted: false)
+    if task0.dueDate == currentDate {
+        task0.taskCompleted == true
+    }
     tasks.append(task0)
     mainMenu()
 }
@@ -38,6 +41,8 @@ func viewTask() {
     for i in 0...tasks.count - 1 {
         if tasks[i].taskCompleted == false {
             print("\(i + 1) \(tasks[i].title)")
+        };if tasks[i].taskCompleted == true {
+            print("\(i + 1) \(tasks[i].title) is completed")
         }
         }
         let input = Int(readLine()!)!
@@ -54,6 +59,8 @@ func deleteTask() {
     for i in 0...tasks.count - 1 {
         if tasks[i].taskCompleted == false {
             print("\(i + 1) \(tasks[i].title)")
+        };if tasks[i].taskCompleted == true {
+            print("\(i + 1) \(tasks[i].title) is completed")
         }
     }
     let input = Int(readLine()!)!
