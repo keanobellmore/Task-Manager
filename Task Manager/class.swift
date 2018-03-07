@@ -12,12 +12,12 @@ class task {
     var title = String()
     var dueDate = Date()
     var details = String()
-    var dueDateBool = true
+    var taskCompleted = false
     
-    init(title: String, dueDate: Date, details: String, dueDateBool: Bool) {
+    init(title: String, dueDate: Date, details: String, taskCompleted: Bool) {
         self.title = title
         self.dueDate = dueDate
         self.details = details
-        self.dueDateBool = dueDateBool
+        self.taskCompleted = taskCompleted
     }
 }
